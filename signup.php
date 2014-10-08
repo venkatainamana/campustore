@@ -34,10 +34,10 @@ if (isset($_POST['email'], $_POST['nick_name'], $_POST['first_name'], $_POST['la
 	}
     }
 ?>
-<html>
+<!DOCTYPE html>
 <head>
     <title>WebShelf - Sign up</title>
-    <link ref="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
     <div class = "container">
@@ -70,5 +70,6 @@ if (isset($_POST['email'], $_POST['nick_name'], $_POST['first_name'], $_POST['la
      
 	     <input type="submit" value="Sign up">
 	</form>
+    </div>
 </body>
 </html>

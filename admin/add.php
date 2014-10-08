@@ -26,10 +26,10 @@ if (isset($_SESSION['logged_in'])) {
     }
 ?>
 
-<html>
+<!DOCTYPE html>
 <head>
     <title>WebShelf</title>
-    <link ref="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="../style.css" type="text/css">
 </head>
 
 <body>

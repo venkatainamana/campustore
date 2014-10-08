@@ -19,7 +19,7 @@ $data = $product->fetch_all();
         <ol>
 	    <?php foreach ($data as $item) { ?>
 	    <li>
-		<a href="product.php?id=<?php echo $item['id'];?>">
+		<a href="product_detail.php?id=<?php echo $item['id'];?>">
 		<?php echo $item['name']; ?>
 		</a> 
 	        <small>posted in
@@ -32,6 +32,11 @@ $data = $product->fetch_all();
         <ol>
 	<br/><br/>
         <a href="signin.php" id="login">Sign in</a>
+	&nbsp;&nbsp;
+        <a href="signup.php" id="signup">Sign up</a>
+	<br><br>
+        <a href="home_page.php" id="home_page">Home Page</a>
+    </div>
 
 </body>
 </html>

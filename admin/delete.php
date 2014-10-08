@@ -19,20 +19,20 @@ if (isset($_SESSION['logged_in'])) {
     }
 ?>
     
-<html>
+<!DOCTYPE html>
 <head>
-    <title>CMS</title>
-    <link ref="stylesheet" href="style.css" type="text/css">
+    <title>WebShelf</title>
+    <link rel="stylesheet" href="../style.css" type="text/css">
 </head>
 
 <body>
     <div class = "container">
-	<a href="../index.php" id="logo">CMS</a>
+	<a href="../index.php" id="logo">WebShelf</a>
 
 	<br /><br />
     <form action="delete.php" method="POST">
 	<?php foreach ($data as $item) {?>
-	    <input type="checkbox" name="delete_ids[]" value=<?php echo $article["article_id"]?>>
+	    <input type="checkbox" name="delete_ids[]" value=<?php echo $item["id"]?>>
 		<?php echo $item["name"]?></option>
 	<?php }?>
 	<input type="submit" value="Submit">

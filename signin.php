@@ -33,10 +33,10 @@ if (isset($_POST['email'], $_POST['password'])) {
 	}
     }
 ?>
-<html>
+<!DOCTYPE html>
 <head>
     <title>WebShelf</title>
-    <link ref="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
 <body>
@@ -56,7 +56,10 @@ if (isset($_POST['email'], $_POST['password'])) {
 	     <input type="password" name="password" placeholder="Password">
 	     <br /><br />
 	     <input type="submit" value="Login">
+	     &nbsp;&nbsp;
+	     <a href="signup.php">Sign up</a>
 	</form>
-	<a href="signup.php">Sign up</a>
+	
+    </div>
 </body>
 </html>

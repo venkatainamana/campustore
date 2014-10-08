@@ -4,6 +4,7 @@ include_once('includes/product.php');
 $product = new Product();
 $data = $product->fetch_all();
 //add by 714380532@qq.com
+//add agian by 714380532@qq.com
 ?>
 
 <!DOCTYPE html>

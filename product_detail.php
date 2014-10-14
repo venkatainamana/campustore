@@ -8,18 +8,10 @@ $product = new Product();
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $data = $product->fetch_data($id);
+    include('includes/header.php');
 ?>
 
-<html>
-<head>
-    <title>WebShelf</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-</head>
-<body>
 
-    <div class="container">
-        <a href="index.php" id="logo">WebShelf</a>
- 
 	<h2><?php echo $data['name'];?></h2>	
 	        <small>posted
 		   <?php 
@@ -31,12 +23,8 @@ if (isset($_GET['id'])) {
 	</p>
 	<a href="order.php">Order</a>
 	<a href="index.php">Back</a>
-    </div>
-
-
-</body>
-</html>
 <?php
+    include('includes/footer.php');
 } else {
     header('Location: index.php');
     exit();

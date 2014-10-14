@@ -23,17 +23,9 @@ if (isset($_SESSION['logged_in'])) {
             header("Location: index.php");
          }
     }
+
+    include('includes/header.php');
 ?>
-
-<!DOCTYPE html>
-<head>
-    <title>WebShelf</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-</head>
-
-<body>
-    <div class = "container">
-        <a href="index.php" id="logo">WebShelf</a>
 
  <br /><br />                                          
         <h4>Sell a product</h4>                                  
@@ -54,6 +46,7 @@ if (isset($_SESSION['logged_in'])) {
 </html>                                                       
                                                               
 <?php                                                         
+    include('includes/footer.php');
 } else{                                                       
     header('Location: index.php');                            
 }                                                             

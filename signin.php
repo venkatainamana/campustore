@@ -32,17 +32,9 @@ if (isset($_POST['email'], $_POST['password'])) {
 	    }
 	}
     }
+    
+    include('includes/header.php');
 ?>
-<!DOCTYPE html>
-<head>
-    <title>WebShelf</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-</head>
-
-<body>
-    <div class = "container">
-	<a href="index.php" id="logo">WebShelf</a>
-
 	<br /><br />
 
 	<?php if (isset($error)) {?>
@@ -60,6 +52,6 @@ if (isset($_POST['email'], $_POST['password'])) {
 	     <a href="signup.php">Sign up</a>
 	</form>
 	
-    </div>
-</body>
-</html>
+<?php
+    include('includes/footer.php');
+?>

@@ -33,16 +33,9 @@ if (isset($_POST['email'], $_POST['nick_name'], $_POST['first_name'], $_POST['la
 	    header("Location: signin.php");
 	}
     }
-?>
-<!DOCTYPE html>
-<head>
-    <title>WebShelf - Sign up</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-</head>
-<body>
-    <div class = "container">
-	<a href="index.php" id="logo">WebShelf</a>
 
+     include('includes/header.php');
+?>
 	<br /><br />
 
 	<?php if (isset($error)) {?>
@@ -70,6 +63,6 @@ if (isset($_POST['email'], $_POST['nick_name'], $_POST['first_name'], $_POST['la
      
 	     <input type="submit" value="Sign up">
 	</form>
-    </div>
-</body>
-</html>
+<?php
+    include('includes/footer.php');
+?>

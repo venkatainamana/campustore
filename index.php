@@ -5,18 +5,11 @@ $product = new Product();
 $data = $product->fetch_all();
 //add by 714380532@qq.com
 //add agian by 714380532@qq.com
+//modified in branch team
+include('includes/header.php');
 ?>
 
-<!DOCTYPE html>
-<head>
-    <title>WebShelf</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-</head>
-<body>
-
-    <div class="container">
-        <a href="index.php" id="logo">WebShelf</a>
-        <ol>
+       <ol>
 	    <?php foreach ($data as $item) { ?>
 	    <li>
 		<a href="product_detail.php?id=<?php echo $item['id'];?>">
@@ -36,7 +29,7 @@ $data = $product->fetch_all();
         <a href="signup.php" id="signup">Sign up</a>
 	<br><br>
         <a href="home_page.php" id="home_page">Home Page</a>
-    </div>
 
-</body>
-</html>
+<?php 
+include('includes/footer.php');
+?>

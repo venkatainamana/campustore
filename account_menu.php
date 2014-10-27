@@ -13,7 +13,7 @@ if(isset($_SESSION['logged_in'])) {
     <link rel="stylesheet" href="style.css" id="style">
 </head>
 <body>
-<div id="account_menu">
+<div id="account_menu" class="container">
     <div class="box menu">
         <h3>Seller Account</h3>
         <p><a href="sold_history.php">View Sold History</a></p>

@@ -114,59 +114,61 @@ if (isset($_SESSION['logged_in'])) {
 
 <body>
 
-    <div id="add_item" class="box add_item">
+    <div id="add_item" class="container">
         <a href="account_menu.php" id="account">Your Account</a>
-        <h3 class="center_align"> Upload Product for sale </h3>
-        <?php if (isset($error)) { ?>
-            <small style="color: #aa0000;"><?php echo $error;?></small>
-            <br /><br />
-        <?php } ?>
-        <form method="post" action="sell.php" name="upload_item" enctype="multipart/form-data" >
-            Category&nbsp;&nbsp;<select name="category" id="category" onchange="changeDisplay()">
-                <?php
-                $query = $pdo->prepare("SELECT id, name FROM category");
-                $query->execute() or die(print_r($query->errorInfo(), true));
-                $result = $query->fetchAll(PDO::FETCH_ASSOC);
-                foreach($result as $row){
-                    echo "<option value='".$row['id']."'>".$row['name']."</option>";
-                }
-                ?>
-            </select>
-            <br><br>
+        <div class="box">
+            <h3 class="center_align"> Upload Product for sale </h3>
+            <?php if (isset($error)) { ?>
+                <small style="color: #aa0000;"><?php echo $error;?></small>
+                <br /><br />
+            <?php } ?>
+            <form method="post" action="sell.php" name="upload_item" enctype="multipart/form-data" >
+                Category&nbsp;&nbsp;<select name="category" id="category" onchange="changeDisplay()">
+                    <?php
+                    $query = $pdo->prepare("SELECT id, name FROM category");
+                    $query->execute() or die(print_r($query->errorInfo(), true));
+                    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($result as $row){
+                        echo "<option value='".$row['id']."'>".$row['name']."</option>";
+                    }
+                    ?>
+                </select>
+                <br><br>
 
-            <label>Name&nbsp;&nbsp;<input type="text" name="name" size="50" required/></label><br><br>
+                <label>Name&nbsp;&nbsp;<input type="text" name="name" size="50" required/></label><br><br>
 
-            <div id="book_details">
-                <label>Author&nbsp;&nbsp;<input type="text" name="author" size="50" /></label><br><br>
-                <label>Edition&nbsp;&nbsp;<input type="text" name="edition" size="50" /></label><br><br>
-                <label>Year&nbsp;&nbsp;<input type="text" name="year" size="50" pattern="[1-9][0-9]{3}"/>
-                    <em class="comments">*YYYY</em>
+                <div id="book_details">
+                    <label>Author&nbsp;&nbsp;<input type="text" name="author" size="50" /></label><br><br>
+                    <label>Edition&nbsp;&nbsp;<input type="text" name="edition" size="50" /></label><br><br>
+                    <label>Year&nbsp;&nbsp;<input type="text" name="year" size="50" pattern="[1-9][0-9]{3}"/>
+                        <em class="comments">*YYYY</em>
+                    </label><br><br>
+                </div>
+
+                <label>Description<br>
+                    <textarea name="description" rows="5" cols="60" required placeholder="Enter Description here.."></textarea>
                 </label><br><br>
-            </div>
 
-            <label>Description<br>
-                <textarea name="description" rows="5" cols="60" required placeholder="Enter Description here.."></textarea>
-            </label><br><br>
+                <label>Quantity&nbsp;&nbsp;
+                    <input type="text" name="quantity" pattern="[1-9]\d*"  value="1" required/>
+                </label><br><br>
 
-            <label>Quantity&nbsp;&nbsp;
-                <input type="text" name="quantity" pattern="[1-9]\d*"  value="1" required/>
-            </label><br><br>
+                <label>Price&nbsp;&nbsp;
+                    <input type="text" name="price" pattern="[1-9]\d*[.]?\d{1,2}" required/>
+                    <em class="comments">*Numbers only and upto 2 decimals allowed</em>
+                </label><br><br>
 
-            <label>Price&nbsp;&nbsp;
-                <input type="text" name="price" pattern="[1-9]\d*[.]?\d{1,2}" required/>
-                <em class="comments">*Numbers only and upto 2 decimals allowed</em>
-            </label><br><br>
+                <label>Picture&nbsp;&nbsp;
+                    <input type="file" name="picture"/><br>
+                    <em class="comments">*File size must be less than 256kb</em>
+                </label><br><br>
 
-            <label>Picture&nbsp;&nbsp;
-                <input type="file" name="picture"/><br>
-                <em class="comments">*File size must be less than 256kb</em>
-            </label><br><br>
+                <input type="submit" name="submit" value="Upload"/>
+                <input type="reset" name="reset" value="Cancel"/>
+                <br>
 
-            <input type="submit" name="submit" value="Upload"/>
-            <input type="reset" name="reset" value="Cancel"/>
-            <br>
-
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 </html>

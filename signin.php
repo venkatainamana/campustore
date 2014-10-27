@@ -19,6 +19,10 @@ if (isset($_POST['email'], $_POST['password'])) {
 		$_SESSION['logged_in'] = true;
 		$users = $query->fetchall();
 		$user_type = $users[0]['type'];
+            /* Added user id to session variable  - Change by ramyaps*/
+        $_SESSION['user_id'] = $users[0]['id'];
+            /* End of change by ramyaps*/
+
 		if($user_type == "admin") {
 		    //echo "admin";
 		    header("Location: admin/index.php");

@@ -1,8 +1,13 @@
 body {
-    padding-top: 120px;
+    padding: 120px;
     font-family: Arial;
 }
-
+.footer {
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+}
 .container{
     width: 500px;
     margin: 0 auto;
@@ -17,3 +22,65 @@ a:link, a:visited {
 a:hover {
     color:#777;
 }
+
+/**********************************************************************************/
+/* BEGIN OF CSS style for sell.php, product_detail.php, order.php, order_detail.php */
+
+h3 {
+    color: coral;
+}
+.box {
+    border: 5px ridge;
+    border-color: gray;
+    border-radius: 10px;
+    margin: 15px;
+    background-color: white;
+}
+.add_item {
+    position: absolute; top: 120px; left: 300px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;padding-top: 10px;
+}
+.menu {
+    position: relative;
+    width: 400px;
+    text-align: left;
+    padding: 10px;
+}
+#account_menu {
+    position: absolute; top: 120px; left: 300px;
+}
+
+.logo {
+    height: 115px;
+    width: 175px;
+}
+
+.center_align {
+    text-align: center;
+}
+.left_align {
+    text-align: left;
+    margin-left: 4px;
+}
+
+em{
+    font-size: small;
+    font-style: normal;
+}
+.comments {
+    color: red;
+}
+
+ul.product_detail li {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 30px;
+}
+.display_product {
+    position: absolute; top: 120px; left: 300px;
+}
+/* END OF CSS Style for Sell.php, product_detail.php, order.php, order_detail.php */
+/**********************************************************************************/

@@ -3,9 +3,8 @@ include_once('includes/connection.php');
 include_once('includes/product.php');
 $product = new Product();
 $data = $product->fetch_all();
-//add by 714380532@qq.com
-//add agian by 714380532@qq.com
-//modified in branch team
+
+$page_title = "index.php";
 include('includes/header.php');
 ?>
 

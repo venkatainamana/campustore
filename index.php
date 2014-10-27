@@ -9,18 +9,33 @@ include('includes/header.php');
 ?>
 
        <ol>
-	    <?php foreach ($data as $item) { ?>
-	    <li>
-		<a href="product_detail.php?id=<?php echo $item['id'];?>">
-		<?php echo $item['name']; ?>
-		</a> 
-	        <small>posted in
-		   <?php 
-			date_default_timezone_set('America/Detroit');
-			echo date('l jS', $article['create_date']);?>
-		</small>
-   	    </i>
-	<?php } ?>
+	    <?php 
+		$column_num = 4;
+		$column_count = 0;
+		foreach ($data as $item) { 
+		   
+	    ?>
+		    <div class="item">
+			<img class="item_icon" src="" alt="item picture">
+			<br>
+			<a href="product_detail.php?id=<?php echo $item['id'];?>">
+			<?php echo $item['name']; ?>
+			</a> 
+			<br>
+	       		 <small>posted in
+		   	<?php 
+				date_default_timezone_set('America/Detroit');
+				echo date('l jS', $article['create_date']);
+			?>
+			</small>
+   		    </div>
+	    <?php
+	   	  if(++$column_count >= $column_num){
+			$column_count = 0;	
+			echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>";
+	           }
+	     } 
+	    ?>
         <ol>
 	<br/><br/>
         <a href="signin.php" id="login">Sign in</a>

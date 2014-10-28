@@ -108,3 +108,21 @@ ul.nostyle_horizontal li {
 
 /* END OF CSS Style for Sell.php, product_detail.php, order.php, order_detail.php */
 /**********************************************************************************/
+
+
+
+
+
+
+/**********************************************************************************/
+/* BEGIN OF CSS style for index.php */
+
+.item {
+    float: left;
+}
+.item_icon {
+    height: 150px;
+    width: 150px;
+}
+/* END OF CSS Style for index.php */
+/**********************************************************************************/

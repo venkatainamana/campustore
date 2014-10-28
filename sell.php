@@ -48,7 +48,8 @@ if (isset($_SESSION['logged_in'])) {
             if ($_FILES['picture']['size'] > 256000) {
                 $error =  "Sorry, your file is too large.";
             }else {
-                $target_path = './uploads/icons/' . basename( $_FILES['picture']['name']);
+		$uploaddir = './uploads/icons/';
+                $target_path = $uploaddir . basename( $_FILES['picture']['tmp_name']);
                 if(move_uploaded_file($_FILES['picture']['tmp_name'], $target_path)) {
                     $image_attr = "1";
                 } else{
@@ -78,14 +79,19 @@ if (isset($_SESSION['logged_in'])) {
 
             // Fetch the id of the new product inserted to the database
             $product_id = $pdo->lastInsertId();
-
+	    rename($target_path, $uploaddir . $product_id);
+	    
+	    //For multiple pictures
             //If image file chosen by user, update the picture table with the filepth
+	    
             if ($image_attr === "1") {
-                $query = $pdo->prepare("INSERT INTO picture (product_id, path) VALUES (?,?)");
+                $query = $pdo->prepare("UPDATE product SET icon = ? WHERE id=?");
                 $query->bindValue(1, $product_id);
-                $query->bindValue(2, $target_path);
+                $query->bindValue(2, $product_id);
                 $query->execute() or die(print_r($query->errorInfo(), true));
             }
+	    
+
             header("Location: edit_item.php");
         }
     }

@@ -13,10 +13,13 @@ include('includes/header.php');
 		$column_num = 4;
 		$column_count = 0;
 		foreach ($data as $item) { 
-		   
+		    $icon_path = "./uploads/icons/".$item['icon']; 
+		    if(!file_exists($icon_path) || is_dir($icon_path)){
+			$icon_path = "./uploads/icons/"."default.png";
+		    }
 	    ?>
 		    <div class="item">
-			<img class="item_icon" src="" alt="item picture">
+			<img class="item_icon" src=<?php echo $icon_path?> alt="item picture">
 			<br>
 			<a href="product_detail.php?id=<?php echo $item['id'];?>">
 			<?php echo $item['name']; ?>

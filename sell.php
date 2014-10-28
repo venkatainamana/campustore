@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once('includes/connection.php');
-include('includes/header.php');
 
 
 if (isset($_SESSION['logged_in'])) {
@@ -49,12 +48,12 @@ if (isset($_SESSION['logged_in'])) {
             if ($_FILES['picture']['size'] > 256000) {
                 $error =  "Sorry, your file is too large.";
             }else {
-//            $target_path = $target_path.basename( $_FILES['picture']['name']);
-//            if(move_uploaded_file($_FILES['picture']['tmp_name'], $target_path)) {
-//                $image_attr = "1";
-//            } else{
-//                $error = "There was an error uploading the file, please try again!";
-//            }
+                $target_path = './uploads/icons/' . basename( $_FILES['picture']['name']);
+                if(move_uploaded_file($_FILES['picture']['tmp_name'], $target_path)) {
+                    $image_attr = "1";
+                } else{
+                    $error = "There was an error uploading the file, please try again!";
+                }
             }
 
         }
@@ -91,30 +90,10 @@ if (isset($_SESSION['logged_in'])) {
         }
     }
 }
+
+$page_title = 'WebShelf -Upload Product to catalog';
+include_once('includes/header.php');
 ?>
-
-<html>
-<head>
-    <title>WebShelf -Upload Product to catalog</title>
-    <link rel="stylesheet" href="style.css" id="style">
-    <!--Script to show/hide div id "Book_details" based on dropdown menu selected -->
-    <script>
-        function changeDisplay(){
-            var category = document.getElementById("category");
-            var book_details = document.getElementById("book_details");
-            if (category.value === '1'){
-                book_details.style.display="inline";
-            }
-            else{
-                book_details.style.display="none";
-            }
-        }
-    </script>
-</head>
-
-<body>
-
-    <div id="add_item" class="container">
         <a href="account_menu.php" id="account">Your Account</a>
         <div class="box">
             <h3 class="center_align"> Upload Product for sale </h3>
@@ -169,9 +148,21 @@ if (isset($_SESSION['logged_in'])) {
 
             </form>
         </div>
-    </div>
-</body>
-</html>
+    
+    <!--Script to show/hide div id "Book_details" based on dropdown menu selected -->
+    <script>
+        function changeDisplay(){
+            var category = document.getElementById("category");
+            var book_details = document.getElementById("book_details");
+            if (category.value === '1'){
+                book_details.style.display="inline";
+            }
+            else{
+                book_details.style.display="none";
+            }
+        }
+    </script>
+
                                                               
 <?php
 include('includes/footer.php');

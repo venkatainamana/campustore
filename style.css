@@ -8,7 +8,7 @@ body {
 }
 
 .header {
-    background:gray;
+    background:blue;
     position: absolute;
     width:100%;
     /*height:200px;*/
@@ -29,7 +29,12 @@ body {
 #searchButton {
     font-size: 20px;
 }
-
+#signin {
+    font-size: 20px;
+}
+#signup {
+    font-size: 20px;
+}
 .footer {
     width:100%;
     background: lightgray;
@@ -124,5 +129,10 @@ ul.nostyle_horizontal li {
     height: 150px;
     width: 150px;
 }
+
 /* END OF CSS Style for index.php */
 /**********************************************************************************/
+
+#signInSubmitBtn {
+    font-size: 20px;
+}

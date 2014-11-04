@@ -40,21 +40,25 @@ if (isset($_POST['email'], $_POST['password'])) {
     include('includes/header.php');
 ?>
 	<br /><br />
-
+	<div class="box">
+	<h3 class="center_align">Sign in<h3>
 	<?php if (isset($error)) {?>
 	    <small style="color:#aa0000;"><?php echo $error;?>
-	    <br />
+	    <br/></small>
 	<?php } ?>
 
 	<form action="signin.php" method="post" autocomplete="off">
+	     <label>Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 	     <input type="text" name="email" placeholder="Email">
-	     <br /><br />
+	     <br><br>
+	     <label>Password</label>
 	     <input type="password" name="password" placeholder="Password">
-	     <br /><br />
-	     <input type="submit" value="Login">
+	     <br><br>
+	     <input type="submit" value="Login" id="signInSubmitBtn">
 	     &nbsp;&nbsp;
 	     <a href="signup.php">Sign up</a>
 	</form>
+	</div>
 	
 <?php
     include('includes/footer.php');

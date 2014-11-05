@@ -13,6 +13,11 @@
 	</select>
         <input type="text" name="searchStr" id="search_input">
 	<button name="searchBtn" id="searchButton">Search</button>
+	<button href="signin.php" id="signin" onclick="window.location.href='signin.php'">Sign in</button>
+	<button href="signup.php" id="signup" onclick="window.location.href='signup.php'">Sign up</button>
+	<button href="signup.php" id="signup" onclick="window.location.href='signup.php'">Sign up</button>
+
+
     </div>
 
     <div class="container">

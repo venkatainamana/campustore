@@ -25,12 +25,15 @@ include('includes/header.php');
 			<?php echo $item['name']; ?>
 			</a> 
 			<br>
-	       		 <small>posted in
+	       		<!--  
+			<small>posted in
 		   	<?php 
 				date_default_timezone_set('America/Detroit');
 				echo date('l jS', $article['create_date']);
 			?>
+			
 			</small>
+			-->
    		    </div>
 	    <?php
 	   	  if(++$column_count >= $column_num){
@@ -40,12 +43,6 @@ include('includes/header.php');
 	     } 
 	    ?>
         <ol>
-	<br/><br/>
-        <a href="signin.php" id="login">Sign in</a>
-	&nbsp;&nbsp;
-        <a href="signup.php" id="signup">Sign up</a>
-	<br><br>
-        <a href="home_page.php" id="home_page">Home Page</a>
 
 <?php 
 include('includes/footer.php');

@@ -111,6 +111,25 @@ ul.nostyle_horizontal li {
     padding-left: 30px;
 }
 
+.left_column {
+    margin-left: 25px;
+    width: 30%;
+}
+
+.center_column {
+    width: 50%;
+    margin-left: 30px;
+    position: relative;
+}
+
+.display_inline {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.text_wrap {
+    word-wrap: break-word;
+}
 /* END OF CSS Style for Sell.php, product_detail.php, order.php, order_detail.php */
 /**********************************************************************************/
 

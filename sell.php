@@ -48,7 +48,7 @@ if (isset($_SESSION['logged_in'])) {
             if ($_FILES['picture']['size'] > 256000) {
                 $error =  "Sorry, your file is too large.";
             }else {
-		$uploaddir = './uploads/icons/';
+		        $uploaddir = './uploads/icons/';
                 $target_path = $uploaddir . basename( $_FILES['picture']['tmp_name']);
                 if(move_uploaded_file($_FILES['picture']['tmp_name'], $target_path)) {
                     $image_attr = "1";
@@ -79,7 +79,7 @@ if (isset($_SESSION['logged_in'])) {
 
             // Fetch the id of the new product inserted to the database
             $product_id = $pdo->lastInsertId();
-	    rename($target_path, $uploaddir . $product_id);
+	        rename($target_path, $uploaddir . $product_id);
 	    
 	    //For multiple pictures
             //If image file chosen by user, update the picture table with the filepth
@@ -90,19 +90,19 @@ if (isset($_SESSION['logged_in'])) {
                 $query->bindValue(2, $product_id);
                 $query->execute() or die(print_r($query->errorInfo(), true));
             }
-	    
 
             header("Location: edit_item.php");
         }
     }
 }
 
-$page_title = 'WebShelf -Upload Product to catalog';
+$page_title = 'WebShelf-Upload Product to catalog';
 include_once('includes/header.php');
 ?>
-        <a href="account_menu.php" id="account">Your Account</a>
+        <br>&nbsp;&nbsp;<a href="account_menu.php" id="account">Your Account</a>
         <div class="box">
             <h3 class="center_align"> Upload Product for sale </h3>
+            <em class="comments">*NOTE: No leading and trailing white-spaces allowed</em><br><br>
             <?php if (isset($error)) { ?>
                 <small style="color: #aa0000;"><?php echo $error;?></small>
                 <br /><br />
@@ -114,19 +114,18 @@ include_once('includes/header.php');
                     $query->execute() or die(print_r($query->errorInfo(), true));
                     $result = $query->fetchAll(PDO::FETCH_ASSOC);
                     foreach($result as $row){
-                        echo "<option value='".$row['id']."'>".$row['name']."</option>";
+                        echo "<option value='".$row['id']."' >".$row['name']."</option>";
                     }
                     ?>
                 </select>
                 <br><br>
 
                 <label>Name&nbsp;&nbsp;<input type="text" name="name" size="50" required/></label><br><br>
-
-                <div id="book_details">
-                    <label>Author&nbsp;&nbsp;<input type="text" name="author" size="50" /></label><br><br>
-                    <label>Edition&nbsp;&nbsp;<input type="text" name="edition" size="50" /></label><br><br>
-                    <label>Year&nbsp;&nbsp;<input type="text" name="year" size="50" pattern="[1-9][0-9]{3}"/>
-                        <em class="comments">*YYYY</em>
+                <div id='book_details'>
+                    <label>Author&nbsp;&nbsp;<input type='text' name='author' size='50' pattern='^[A-Za-z][A-Za-z\s]*[A-Za-z]$'></label><br><br>
+                    <label>Edition&nbsp;&nbsp;<input type='text' name='edition' size='50' pattern="^\w[\w\s]*[\w]$"/></label><br><br>
+                    <label>Year&nbsp;&nbsp;<input type='text' name='year' size='50' pattern='[1-9][0-9]{3}'/>
+                    <em class='comments'>*YYYY</em>
                     </label><br><br>
                 </div>
 
@@ -139,8 +138,8 @@ include_once('includes/header.php');
                 </label><br><br>
 
                 <label>Price&nbsp;&nbsp;
-                    <input type="text" name="price" pattern="[1-9]\d*[.]?\d{1,2}" required/>
-                    <em class="comments">*Numbers only and upto 2 decimals allowed</em>
+                    <input type="text" name="price" pattern="[1-9]\d*[.]\d{2}" required/>
+                    <em class="comments">*##.## (Numbers only) </em>
                 </label><br><br>
 
                 <label>Picture&nbsp;&nbsp;

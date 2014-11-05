@@ -2,7 +2,6 @@
 session_start();
 include_once('includes/connection.php');
 include_once('includes/product.php');
-include_once('includes/header.php');
 $product = new Product();
 
 if (isset($_GET['id'])) {
@@ -37,14 +36,14 @@ if (isset($_GET['id'])) {
         }
     }
 
+    include_once('includes/header.php');
+    
     $query = $pdo->prepare("SELECT * FROM user WHERE id = ?");
     $query->bindValue(1, $data['user_id']);
     $query->execute() or die(print_r($query->errorInfo(), true));
     $user = $query->fetch();
 
 ?>
-    <html>
-    <body>
     <div id="display_product" class="container">
         <ul class="nostyle_horizontal">
             <li>
@@ -63,8 +62,6 @@ if (isset($_GET['id'])) {
             </li>
         </ul><br>
     </div>
-    </body>
-    </html>
 
 <!--	<h2>--><?php //echo $data['name'];?><!--</h2>	-->
 <!--	        <small>posted-->

@@ -39,6 +39,7 @@ if (isset($_POST['email'], $_POST['nick_name'], $_POST['first_name'], $_POST['la
 	<br /><br />
 	
 	<div class="box">
+	<div class="form">
 	<h3 class="center_align">Sign up</h3>
 	<?php if (isset($error)) {?>
 	    <small style="color:#aa0000;"><?php echo $error;?>
@@ -73,6 +74,7 @@ if (isset($_POST['email'], $_POST['nick_name'], $_POST['first_name'], $_POST['la
      
 	     <input type="submit" value="Sign up">
 	</form>
+	</div>
 	</div>
 <?php
     include('includes/footer.php');

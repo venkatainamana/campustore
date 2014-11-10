@@ -35,6 +35,15 @@ body {
 #signup {
     font-size: 20px;
 }
+#signout {
+    font-size: 20px;
+}
+.form{
+    text-align: center;
+    font-size: 16px;
+    margin: 0 auto auto auto;
+}
+
 .footer {
     width:100%;
     background: lightgray;
@@ -153,5 +162,5 @@ ul.nostyle_horizontal li {
 /**********************************************************************************/
 
 #signInSubmitBtn {
-    font-size: 20px;
+    font-size: 50px;
 }

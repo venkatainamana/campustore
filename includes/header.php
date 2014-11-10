@@ -15,7 +15,7 @@
 	<button name="searchBtn" id="searchButton">Search</button>
 	<button href="signin.php" id="signin" onclick="window.location.href='signin.php'">Sign in</button>
 	<button href="signup.php" id="signup" onclick="window.location.href='signup.php'">Sign up</button>
-	<button href="signup.php" id="signup" onclick="window.location.href='signup.php'">Sign up</button>
+	<button href="signout.php" id="signout" onclick="window.location.href='signout.php'">Sign out</button>
 
 
     </div>

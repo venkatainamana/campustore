@@ -41,12 +41,12 @@ if (isset($_POST['email'], $_POST['password'])) {
 ?>
 	<br /><br />
 	<div class="box">
-	<h3 class="center_align">Sign in<h3>
 	<?php if (isset($error)) {?>
 	    <small style="color:#aa0000;"><?php echo $error;?>
 	    <br/></small>
 	<?php } ?>
-
+     <div class="form">
+	<h3 class="center_align">Sign in<h3>
 	<form action="signin.php" method="post" autocomplete="off">
 	     <label>Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 	     <input type="text" name="email" placeholder="Email">
@@ -54,11 +54,12 @@ if (isset($_POST['email'], $_POST['password'])) {
 	     <label>Password</label>
 	     <input type="password" name="password" placeholder="Password">
 	     <br><br>
-	     <input type="submit" value="Login" id="signInSubmitBtn">
+	     <input type="submit" value="Sign in" id="signInSubmitBtn">
 	     &nbsp;&nbsp;
 	     <a href="signup.php">Sign up</a>
 	</form>
-	</div>
+    </div>
+  </div>
 	
 <?php
     include('includes/footer.php');

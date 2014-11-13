@@ -17,6 +17,8 @@ body {
     text-align: center;
 }
 
+
+
 #category_dropdown {
     font-size: 20px;
 }
@@ -138,6 +140,15 @@ ul.nostyle_horizontal li {
 
 .text_wrap {
     word-wrap: break-word;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 8px;
 }
 /* END OF CSS Style for Sell.php, product_detail.php, order.php, order_detail.php */
 /**********************************************************************************/

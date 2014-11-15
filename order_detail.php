@@ -24,12 +24,14 @@ if(isset($_SESSION['logged_in'])) {
         $product_data = $product->fetch_data($order_data['product_id']);   //fetch product details
         $seller_data = $user->fetch_user($product_data['user_id']);        //fetch seller details
 
-include('includes/header.php');
+        $page_title = "Webshelf- Order Detail";
+        include('includes/header.php');
+
 ?>
 
     <div id="order" class="container">
         <br>&nbsp;&nbsp;<a href="account_menu.php" id="account">Your Account</a>&nbsp;&gt;&nbsp;
-        <a href="order_history.php?activeFilter=purchase">Orders</a>&nbsp;&gt;&nbsp;<span style="color: coral">Order Details </span>
+        <a href="order_history.php">Orders</a>&nbsp;&gt;&nbsp;<span style="color: indianred">Order Details </span>
         <br>
         <ul class="nostyle_horizontal box">
             <li>
@@ -54,9 +56,10 @@ include('includes/header.php');
             </li>
         </ul>
 
-        <br><p style="color: coral"><?php echo $order_data['status']?></p>
+        <br>
 
         <div class="left_column display_inline">
+            <p>Order Status: <span style="color: coral;font-weight: bold"><?php echo $order_data['status']?></span></p>
             <img height="150px" width="100px" src="<?php echo $image?>" alt="product image" class="product">
         </div>
         <div class="display_inline center_column text_wrap">

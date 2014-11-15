@@ -17,6 +17,8 @@ body {
     text-align: center;
 }
 
+
+
 #category_dropdown {
     font-size: 20px;
 }
@@ -52,7 +54,7 @@ body {
 .container{
     background:lightGray;
     width: 90%;
-
+    padding: 20px;
     /*margin: 0 auto;
     position: absolute; top: 120px; left: 300px;*/
 }
@@ -139,6 +141,15 @@ ul.nostyle_horizontal li {
 .text_wrap {
     word-wrap: break-word;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 8px;
+}
 /* END OF CSS Style for Sell.php, product_detail.php, order.php, order_detail.php */
 /**********************************************************************************/
 
@@ -162,5 +173,13 @@ ul.nostyle_horizontal li {
 /**********************************************************************************/
 
 #signInSubmitBtn {
-    font-size: 50px;
+    font-size: 20px;
+}
+
+.show_table {
+    border: none;
+}
+
+.show_table td {
+    padding: 20px;
 }

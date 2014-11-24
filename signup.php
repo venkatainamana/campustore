@@ -37,32 +37,45 @@ if (isset($_POST['email'], $_POST['nick_name'], $_POST['first_name'], $_POST['la
      include('includes/header.php');
 ?>
 	<br /><br />
-
+	
+	<div class="box">
+	<div class="form">
+	<h3 class="center_align">Sign up</h3>
 	<?php if (isset($error)) {?>
 	    <small style="color:#aa0000;"><?php echo $error;?>
-	    <br />
+	    <br></small>
 	<?php } ?>
 
 	<form action="signup.php" method="post" autocomplete="off">
+	     <label>Email</label>
 	     <input type="text" name="email" placeholder="Email">
-	     <br /><br />
+	     <br><br>
+	     <label>Password</label>
 	     <input type="password" name="password" placeholder="Password">
-	     <br /><br />
+	     <br><br>
+	     <label>Confirm</label>
 	     <input type="password" name="confirm_password" placeholder="Confirm Password">
-	     <br /><br />
+	     <br><br>
+	     <label>Nickname</label>
 	     <input type="text" name="nick_name" placeholder="Nick Name">
-	     <br /><br />
+	     <br><br>
+	     <label>First name</label>
 	     <input type="text" name="first_name" placeholder="First Name">
-	     <br /><br />
+	     <br><br>
+	     <label>Last name</label>
 	     <input type="text" name="last_name" placeholder="Last Name">
-	     <br /><br />     
+	     <br><br>     
+	     <label>Phone</label>
              <input type="text" name="phone" placeholder="Phone Number">
-	     <br /><br />     
+	     <br><br>     
+	     <label>Address</label>
              <input type="text" name="address" placeholder="Address">
-	     <br /><br />     
+	     <br><br>     
      
 	     <input type="submit" value="Sign up">
 	</form>
+	</div>
+	</div>
 <?php
     include('includes/footer.php');
 ?>
